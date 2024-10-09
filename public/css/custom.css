@@ -180,9 +180,9 @@ footer {
 }
 /* Multi Step CSS*/
 #container {
-    max-width: 550px;  
+    max-width: 550px;
   }
-  
+
   body {
     display: inline-block;
     width: 100%;
@@ -226,8 +226,8 @@ input:-internal-autofill-selected {
     position: relative;
     height: 100%;
     z-index: 999;
-    opacity: 1; 
-    visibility: visible; 
+    opacity: 1;
+    visibility: visible;
 }
 /*progress header*/
 #progress_header {
@@ -281,7 +281,7 @@ input:-internal-autofill-selected {
 #progress_header li:first-child:before {
     content: none;
 }
-#progress_header li.active:before, 
+#progress_header li.active:before,
 #progress_header li.active:after {
     background-image: linear-gradient(to right top, #35e8c3, #36edbb, #3df2b2, #4af7a7, #59fb9b) !important;
     color: #fff !important;
@@ -389,13 +389,13 @@ p.nxt-prev-button {
     background-image: linear-gradient(to right top, #35e8c3, #36edbb, #3df2b2, #4af7a7, #59fb9b);
     transition: all 0.5s;
 }
-.action-button:hover, 
+.action-button:hover,
 .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #6ce199;
 }
 .form_submited #multistep_form {
-    opacity: 0; 
-    visibility: hidden; 
+    opacity: 0;
+    visibility: hidden;
 }
 .form_submited h1 {
     -webkit-background-clip: text;
@@ -466,4 +466,12 @@ h1 {
 }
 .showsuccess_msg{
     display: none;
+}
+#navbarSupportedContent .nav-link{
+  color:#fff;
+  font-weight: 600;
+}
+
+.icon-name {
+  margin-left: 7px;
 }
