@@ -374,7 +374,7 @@ $(".ts_next_btn").click(function() {
         if ((lname.length <= 2) || (lname.length > 20)) {
             $("#error-lname").text("User length must be between 2 and 20 Characters.");
             error = true;
-        } 
+        }
         if (!isNaN(lname)) {
             $("#error-lname").text("Only Characters are allowed.");
             error = true;
@@ -496,7 +496,7 @@ $(".submit_btn").click(function() {
     return false;
 })
 
-// Eligibility Form 
+// Eligibility Form
 // $(document).ready(function() {
 //     var eligibility_currentStep = 0;
 //     var eligibility_steps = $(".eligibility_step");
@@ -640,7 +640,7 @@ $(".submit_btn").click(function() {
 //         unhighlight: function(element) {
 //             $(element).removeClass('is-invalid').addClass('is-valid'); // Add valid class
 //         },
-//         submitHandler: function(form) {           
+//         submitHandler: function(form) {
 //             form.submit(); // Submit the form
 //         }
 //     });
@@ -693,18 +693,24 @@ $(document).ready(function () {
         updateProgressBar();
     });
 
-    // Update progress bar and active step based on the current step
     function updateProgressBar() {
-        // Remove active class from all progress steps and set light color
-        $('.eligibility-progress-bar').removeClass('bg-primary').addClass('bg-light');
-        
-        // Set the current progress step to primary color
-        $('#progressStep' + currentStep).removeClass('bg-light').addClass('bg-primary');
+      // Loop through all steps and apply the necessary classes
+      $('.eligibility-progress-bar').each(function (index) {
+          if (index + 1 < currentStep) {
+              // All steps before the current one should be marked as completed
+              $(this).removeClass('bg-light').addClass('bg-primary');
+          } else if (index + 1 === currentStep) {
+              // The current step should be highlighted
+              $(this).removeClass('bg-light').addClass('bg-primary');
+          } else {
+              // All steps after the current one should be light
+              $(this).removeClass('bg-primary').addClass('bg-light');
+          }
+      });
 
-        // Remove active class from all steps and set active class to current step
-        $('.eligibility_step').removeClass('active').eq(currentStep - 1).addClass('active');
-    }
-
+      // Update active class for step content
+      $('.eligibility_step').removeClass('active').eq(currentStep - 1).addClass('active');
+  }
     // jQuery validation rules
     $('#eligibilityForm').validate({
         rules: {
@@ -741,7 +747,7 @@ $(document).ready(function () {
             $(element).removeClass('is-invalid').addClass('is-valid'); // Add valid class
         },
         submitHandler: function(form) {
-           $('.showsuccess_msg').show();            
+           $('.showsuccess_msg').show();
         }
     });
 
@@ -764,4 +770,3 @@ $(document).ready(function () {
         });
     }
 });
-
